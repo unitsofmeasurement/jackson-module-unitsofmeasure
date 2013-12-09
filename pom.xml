@@ -8,7 +8,7 @@
     <groupId>com.opower.unitsofmeasure</groupId>
     <artifactId>jackson-module-unitsofmeasure</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.1</version>
+    <version>1.1.0</version>
 
     <name>Jackson Unit of Measure Module</name>
     <description>Contains custom serializers and deserializers for org.unitsofmeasure classes.</description>
@@ -41,14 +41,14 @@
         <!-- Jackson library for JSON-parsing                                                                            -->
         <!-- =========================================================================================================== -->
         <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-core-asl</artifactId>
-            <version>1.9.7</version>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.2.2</version>
         </dependency>
         <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-mapper-asl</artifactId>
-            <version>1.9.7</version>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.2.2</version>
         </dependency>
 
         <dependency>
