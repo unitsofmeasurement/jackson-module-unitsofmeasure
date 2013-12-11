@@ -3,14 +3,15 @@ package com.opower.unitsofmeasure;
 import java.io.IOException;
 import java.io.StringWriter;
 
+import com.fasterxml.jackson.core.JsonFactory;
+import com.fasterxml.jackson.core.JsonGenerator;
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import org.junit.Before;
 import org.junit.Test;
 
-import org.codehaus.jackson.JsonFactory;
-import org.codehaus.jackson.JsonGenerator;
-import org.codehaus.jackson.JsonParseException;
-import org.codehaus.jackson.JsonParser;
-import org.codehaus.jackson.map.ObjectMapper;
 import org.jscience.physics.unit.SI;
 import org.jscience.physics.unit.UCUM;
 import org.unitsofmeasurement.unit.Unit;
@@ -42,14 +43,14 @@ public class TestUnitJacksonModule {
     @Test
     public void testSerializeTemperature() throws Exception {
         assertEquals("Expected JSON with a UCUM representation of the temperature unit",
-                     "\"[degF]\"", serialize(UCUM.FAHRENHEIT));
+                "\"[degF]\"", serialize(UCUM.FAHRENHEIT));
         assertEquals("Expected JSON with a UCUM representation of the temperature unit",
-                     "\"Cel\"", serialize(SI.CELSIUS));
+                "\"Cel\"", serialize(SI.CELSIUS));
     }
     @Test
     public void testSerializeLength() throws Exception {
         assertEquals("Expected JSON with a UCUM representation of the length unit",
-                     "\"[mi_i]\"", serialize(UCUM.MILE_INTERNATIONAL));
+                "\"[mi_i]\"", serialize(UCUM.MILE_INTERNATIONAL));
 
         assertEquals("Expected JSON with a UCUM representation of the length unit", "\"km\"", serialize(KILO(SI.METRE)));
     }

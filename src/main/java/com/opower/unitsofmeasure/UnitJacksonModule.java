@@ -3,15 +3,16 @@ package com.opower.unitsofmeasure;
 import java.io.IOException;
 import java.text.ParsePosition;
 
-import org.codehaus.jackson.JsonGenerator;
-import org.codehaus.jackson.JsonParser;
-import org.codehaus.jackson.JsonToken;
-import org.codehaus.jackson.Version;
-import org.codehaus.jackson.map.DeserializationContext;
-import org.codehaus.jackson.map.SerializerProvider;
-import org.codehaus.jackson.map.deser.std.StdScalarDeserializer;
-import org.codehaus.jackson.map.module.SimpleModule;
-import org.codehaus.jackson.map.ser.std.ScalarSerializerBase;
+import com.fasterxml.jackson.core.JsonGenerator;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.core.JsonToken;
+import com.fasterxml.jackson.core.Version;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.SerializerProvider;
+import com.fasterxml.jackson.databind.deser.std.StdScalarDeserializer;
+import com.fasterxml.jackson.databind.module.SimpleModule;
+import com.fasterxml.jackson.databind.ser.std.StdScalarSerializer;
+
 import org.jscience.physics.unit.formats.UCUMFormat;
 import org.unitsofmeasurement.unit.Unit;
 
@@ -27,7 +28,7 @@ public class UnitJacksonModule extends SimpleModule {
         addDeserializer(Unit.class, new UnitJsonDeserializer());
     }
 
-    private class UnitJsonSerializer extends ScalarSerializerBase<Unit> {
+    private class UnitJsonSerializer extends StdScalarSerializer<Unit> {
         protected UnitJsonSerializer() {
             super(Unit.class);
         }
@@ -61,8 +62,8 @@ public class UnitJacksonModule extends SimpleModule {
                 return UCUMFormat.getCaseInsensitiveInstance().parse(jsonParser.getText(), new ParsePosition(0));
             }
             throw deserializationContext.wrongTokenException(jsonParser,
-                                                             JsonToken.VALUE_STRING,
-                                                             "Expected unit value in String format");
+                    JsonToken.VALUE_STRING,
+                    "Expected unit value in String format");
         }
     }
 }
