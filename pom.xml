@@ -11,7 +11,7 @@
     <version>1.1.0</version>
 
     <name>Jackson Unit of Measure Module</name>
-    <description>Contains custom serializers and deserializers for org.unitsofmeasure classes.</description>
+    <description>Contains custom serializers and deserializers for org.unitsofmeasurement classes.</description>
 
     <repositories>
         <repository>

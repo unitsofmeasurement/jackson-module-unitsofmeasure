@@ -1,7 +1,7 @@
 jackson-module-unitsofmeasure
 =============================
 
-Contains custom serializers and deserializers for org.unitsofmeasure classes.
+Contains custom serializers and deserializers for org.unitsofmeasurement classes.
 
 This was built with a custom `5.0-opower` version of JScience, which is provided in a local Maven repository, located in the
 `/repo` sub-directory of this artifact. It was built from JScience version `r65` (from 2011-10-27), because as of 2013-11-05
