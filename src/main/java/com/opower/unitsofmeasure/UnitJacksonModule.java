@@ -21,8 +21,13 @@ import org.unitsofmeasurement.unit.Unit;
  * translate well into JSON.
  */
 public class UnitJacksonModule extends SimpleModule {
-    public UnitJacksonModule() {
-        super("UnitJsonSerializationModule", new Version(1, 0, 0, null));
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 7601584599518016604L;
+
+	public UnitJacksonModule() {
+        super("UnitJsonSerializationModule", new Version(1, 2, 0, null));
 
         addSerializer(Unit.class, new UnitJsonSerializer());
         addDeserializer(Unit.class, new UnitJsonDeserializer());
@@ -50,7 +55,12 @@ public class UnitJacksonModule extends SimpleModule {
     }
 
     private class UnitJsonDeserializer extends StdScalarDeserializer<Unit> {
-        protected UnitJsonDeserializer() {
+        /**
+		 * 
+		 */
+		private static final long serialVersionUID = -6327531740958676293L;
+
+		protected UnitJsonDeserializer() {
             super(Unit.class);
         }
 
