@@ -12,7 +12,7 @@
     <groupId>com.opower.unitsofmeasure</groupId>
     <artifactId>jackson-module-unitsofmeasure</artifactId>
     <packaging>jar</packaging>
-    <version>1.2-uom-SNAPSHOT</version>
+    <version>1.2-uom</version>
 
     <name>Jackson Unit of Measure Module</name>
     <description>Contains custom serializers and deserializers for org.unitsofmeasurement classes.</description>
