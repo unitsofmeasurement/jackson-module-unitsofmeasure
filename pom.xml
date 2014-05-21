@@ -12,7 +12,7 @@
     <groupId>com.opower.unitsofmeasure</groupId>
     <artifactId>jackson-module-unitsofmeasure</artifactId>
     <packaging>jar</packaging>
-    <version>1.3-uom-SNAPSHOT</version>
+    <version>1.3-uom</version>
 
     <name>Jackson Unit of Measure Module</name>
     <description>Contains custom serializers and deserializers for org.unitsofmeasurement classes.</description>
@@ -25,9 +25,9 @@
         <jdkVersion>1.8</jdkVersion>
         <maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
         <maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
-        <jsr.version>0.5-SNAPSHOT</jsr.version>
-        <ri.version>0.2-SNAPSHOT</ri.version>
-        <lib.version>0.1-SNAPSHOT</lib.version>
+        <jsr.version>0.4</jsr.version>
+        <ri.version>0.1</ri.version>
+        <lib.version>0.1-SNAPSHOT</lib.version> <!-- currently unused -->
         <jackson.version>2.2.2</jackson.version>
     </properties>
 
