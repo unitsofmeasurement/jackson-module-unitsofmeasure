@@ -12,11 +12,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Before;
 import org.junit.Test;
 
-import org.jscience.physics.unit.SI;
-import org.jscience.physics.unit.UCUM;
-import org.unitsofmeasurement.unit.Unit;
+import org.unitsofmeasurement.ri.util.SI;
+import org.unitsofmeasurement.ri.util.UCUM;
+import javax.measure.Unit;
 
-import static org.jscience.physics.unit.SIPrefix.KILO;
+import static org.unitsofmeasurement.ri.util.SIPrefix.KILO;
 import static org.junit.Assert.*;
 
 /**

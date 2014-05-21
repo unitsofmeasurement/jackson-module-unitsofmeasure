@@ -1,10 +1,6 @@
 jackson-module-unitsofmeasure
 =============================
 
-Contains custom serializers and deserializers for org.unitsofmeasurement classes.
+Contains custom serializers and deserializers for JSR 363.
 
-This was built with a custom `5.0-opower` version of JScience, which is provided in a local Maven repository, located in the
-`/repo` sub-directory of this artifact. It was built from JScience version `r65` (from 2011-10-27), because as of 2013-11-05
-there is no publicly released version 5.0 (or greater). It contains fixes to the OSGI and Javolution dependencies, whose Maven
-coordinates have changed since the last official JScience release, and corrections to import statements for the
-`org.jscience.physics.unit.system.*` classes.
+This was built wit version `0.5-SNAPSHOT` of the JSR 363 API and `0.2-SNAPSHOT` of the RI, both provided in a local Maven repository, called `/repository` under this ("unitsofmeasurement") organization.

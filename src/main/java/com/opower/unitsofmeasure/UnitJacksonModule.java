@@ -13,8 +13,10 @@ import com.fasterxml.jackson.databind.deser.std.StdScalarDeserializer;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.databind.ser.std.StdScalarSerializer;
 
-import org.jscience.physics.unit.formats.UCUMFormat;
-import org.unitsofmeasurement.unit.Unit;
+import org.unitsofmeasurement.ri.format.UCUMFormat;
+import org.unitsofmeasurement.ri.format.UCUMFormat.Variant;
+
+import javax.measure.Unit;
 
 /**
  * Configures Jackson to (de)serialize JScience Unit objects using their UCUM representation, since the actual objects don't
@@ -47,7 +49,7 @@ public class UnitJacksonModule extends SimpleModule {
                 // Format the unit using the standard UCUM representation.
                 // The string produced for a given unit is always the same; it is not affected by the locale.
                 // It can be used as a canonical string representation for exchanging units.
-                String ucumFormattedUnit = UCUMFormat.getCaseSensitiveInstance().format(unit, new StringBuilder()).toString();
+                String ucumFormattedUnit = UCUMFormat.getInstance(Variant.CASE_SENSITIVE).format(unit, new StringBuilder()).toString();
 
                 jgen.writeString(ucumFormattedUnit);
             }
@@ -69,7 +71,7 @@ public class UnitJacksonModule extends SimpleModule {
             JsonToken currentToken = jsonParser.getCurrentToken();
 
             if (currentToken == JsonToken.VALUE_STRING) {
-                return UCUMFormat.getCaseInsensitiveInstance().parse(jsonParser.getText(), new ParsePosition(0));
+                return UCUMFormat.getInstance(Variant.CASE_INSENSITIVE).parse(jsonParser.getText(), new ParsePosition(0));
             }
             throw deserializationContext.wrongTokenException(jsonParser,
                     JsonToken.VALUE_STRING,
