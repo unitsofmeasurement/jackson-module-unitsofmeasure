@@ -29,7 +29,7 @@ public class UnitJacksonModule extends SimpleModule {
 	private static final long serialVersionUID = 7601584599518016604L;
 
 	public UnitJacksonModule() {
-        super("UnitJsonSerializationModule", new Version(1, 2, 0, null));
+        super("UnitJsonSerializationModule", new Version(1, 3, 1, null));
 
         addSerializer(Unit.class, new UnitJsonSerializer());
         addDeserializer(Unit.class, new UnitJsonDeserializer());
