@@ -13,8 +13,8 @@ import com.fasterxml.jackson.databind.deser.std.StdScalarDeserializer;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.databind.ser.std.StdScalarSerializer;
 
-import org.unitsofmeasurement.ri.format.UCUMFormat;
-import org.unitsofmeasurement.ri.format.UCUMFormat.Variant;
+import tec.uom.se.format.UCUMFormat;
+import tec.uom.se.format.UCUMFormat.Variant;
 
 import javax.measure.Unit;
 

@@ -5,14 +5,14 @@
 
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <version>0.5</version>
-        <artifactId>unitsofmeasurement-parent</artifactId>
-        <groupId>org.unitsofmeasurement</groupId>
+        <version>0.7</version>
+        <artifactId>uom-parent</artifactId>
+        <groupId>tec.uom</groupId>
     </parent>
     <groupId>com.opower.unitsofmeasure</groupId>
     <artifactId>jackson-module-unitsofmeasure</artifactId>
     <packaging>jar</packaging>
-    <version>1.3.1-uom</version>
+    <version>1.3.2-uom</version>
 
     <name>Jackson Units of Measurement Module</name>
     <description>Contains custom serializers and deserializers for JSR 363.</description>
@@ -25,41 +25,25 @@
         <jdkVersion>1.8</jdkVersion>
         <maven.compile.targetLevel>1.6</maven.compile.targetLevel>
         <maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
-        <jsr.version>0.5</jsr.version>
-        <ri.version>0.2</ri.version>
-        <lib.version>0.1</lib.version> <!-- currently unused -->
+        <jsr.version>0.7</jsr.version>
+        <impl.version>0.6</impl.version>
+        <lib.version>0.5</lib.version> <!-- currently unused -->
         <jackson.version>2.2.2</jackson.version>
     </properties>
 
     <dependencies>
         <!-- =========================================================================================================== -->
-        <!-- The units of measurement interface is in the org.unitsofmeasurement package.                                -->
-        <!-- The implementation is provided by JScience                                                                  -->
+        <!-- The units of measurement interface is in the javax.measure package.                                -->
+        <!-- The implementation is provided by JSR 363                                                                  -->
         <!-- =========================================================================================================== -->
         <dependency>
             <groupId>javax.measure</groupId>
-            <artifactId>unit-api-core</artifactId>
-            <version>${jsr.version}</version>
+            <artifactId>unit-api</artifactId>
         </dependency>
         <dependency>
-            <groupId>javax.measure</groupId>
-            <artifactId>unit-api-format</artifactId>
-            <version>${jsr.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>javax.measure</groupId>
-            <artifactId>unit-api-quantity</artifactId>
-            <version>${jsr.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>javax.measure</groupId>
-            <artifactId>unit-api-util</artifactId>
-            <version>${jsr.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.unitsofmeasurement</groupId>
-            <artifactId>unit-ri</artifactId>
-            <version>${ri.version}</version>
+            <groupId>tec.uom</groupId>
+            <artifactId>uom-se</artifactId>
+            <version>${impl.version}</version>
         </dependency>
 
         <!-- =========================================================================================================== -->
