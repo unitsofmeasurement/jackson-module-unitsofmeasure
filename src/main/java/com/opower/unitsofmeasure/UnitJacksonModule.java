@@ -19,7 +19,7 @@ import tec.uom.se.format.UCUMFormat.Variant;
 import javax.measure.Unit;
 
 /**
- * Configures Jackson to (de)serialize JScience Unit objects using their UCUM representation, since the actual objects don't
+ * Configures Jackson to (de)serialize JSR 363 Unit objects using their UCUM representation, since the actual objects don't
  * translate well into JSON.
  */
 public class UnitJacksonModule extends SimpleModule {
@@ -46,7 +46,7 @@ public class UnitJacksonModule extends SimpleModule {
                 jgen.writeNull();
             }
             else {
-                // Format the unit using the standard UCUM representation.
+                // Format the unit using the UCUM representation.
                 // The string produced for a given unit is always the same; it is not affected by the locale.
                 // It can be used as a canonical string representation for exchanging units.
                 String ucumFormattedUnit = UCUMFormat.getInstance(Variant.CASE_SENSITIVE).format(unit, new StringBuilder()).toString();
