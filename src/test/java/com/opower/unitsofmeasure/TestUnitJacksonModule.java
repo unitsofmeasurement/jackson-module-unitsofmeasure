@@ -12,12 +12,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.junit.Before;
 import org.junit.Test;
-import tec.uom.se.util.SI;
-import tec.uom.se.util.UCUM;
+import tec.uom.se.unit.SI;
+import tec.uom.se.unit.ucum.UCUM;
 
 import javax.measure.Unit;
 
-import static tec.uom.se.util.SIPrefix.KILO;
+import static tec.uom.se.unit.MetricPrefix.KILO;
 import static org.junit.Assert.*;
 
 /**
