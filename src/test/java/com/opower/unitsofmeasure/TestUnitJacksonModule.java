@@ -14,9 +14,8 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import tec.uom.se.unit.SI;
 import tec.uom.se.unit.Units;
-import tec.uom.se.unit.ucum.UCUM;
+import systems.uom.ucum.UCUM;
 
 import javax.measure.Unit;
 
@@ -43,7 +42,7 @@ public class TestUnitJacksonModule {
 	public void testSerializeArea() throws Exception {
 		assertEquals(
 				"Expected JSON with a UCUM representation of the area unit",
-				"\"m2\"", serialize(SI.SQUARE_METRE));
+				"\"m2\"", serialize(Units.SQUARE_METRE));
 	}
 
 	@Test
@@ -53,7 +52,7 @@ public class TestUnitJacksonModule {
 				"\"[degF]\"", serialize(UCUM.FAHRENHEIT));
 		assertEquals(
 				"Expected JSON with a UCUM representation of the temperature unit",
-				"\"Cel\"", serialize(SI.CELSIUS));
+				"\"Cel\"", serialize(Units.CELSIUS));
 	}
 
 	@Test
@@ -64,7 +63,7 @@ public class TestUnitJacksonModule {
 
 		assertEquals(
 				"Expected JSON with a UCUM representation of the length unit",
-				"\"km\"", serialize(KILO(SI.METRE)));
+				"\"km\"", serialize(KILO(Units.METRE)));
 	}
 	
 	@Test
@@ -87,7 +86,7 @@ public class TestUnitJacksonModule {
 	public void testParseTemperature() throws Exception {
 		Unit<?> parsedUnit = parse("\"Cel\"", Unit.class);
 		assertEquals("The Unit<Temperature> in the parsed JSON doesn't match",
-				SI.CELSIUS, parsedUnit);
+				Units.CELSIUS, parsedUnit);
 	}
 
 	@Test
@@ -95,7 +94,7 @@ public class TestUnitJacksonModule {
 		Unit<?> parsedUnit = parse("\"km\"", Unit.class);
 
 		assertEquals("The Unit<Length> in the parsed JSON doesn't match",
-				KILO(SI.METRE), parsedUnit);
+				KILO(Units.METRE), parsedUnit);
 	}
 
 	@Test(expected = JsonParseException.class)
