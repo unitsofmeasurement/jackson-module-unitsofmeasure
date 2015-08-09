@@ -5,7 +5,7 @@
 
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <version>0.8-RC2</version>
+        <version>0.8-RC3</version>
         <artifactId>uom-parent</artifactId>
         <groupId>tec.uom</groupId>
     </parent>
@@ -47,7 +47,7 @@
         </dependency>
         <dependency>
             <groupId>systems.uom</groupId>
-            <artifactId>uom-systems-ucum</artifactId>
+            <artifactId>systems-ucum-java8</artifactId>
             <version>${ucum.version}</version>
         </dependency>
 
