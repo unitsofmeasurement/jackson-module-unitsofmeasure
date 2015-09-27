@@ -11,7 +11,6 @@ import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import tec.uom.se.unit.Units;
@@ -67,11 +66,10 @@ public class TestUnitJacksonModule {
 		
 //		assertEquals(
 //				"Expected JSON with a UCUM representation of the length unit",
-//				"\"km\"", serialize(KILO(Units.METRE)));  TODO solve km formatting
+//				"\"km\"", serialize(KILO(Units.METRE)));  //TODO solve km formatting
 	}
 	
 	@Test
-	@Ignore("Currently broken in SE port")
 	public void testSerializeSpeed() throws Exception {
 		assertEquals(
 				"Expected JSON with a UCUM representation of the speed unit",
