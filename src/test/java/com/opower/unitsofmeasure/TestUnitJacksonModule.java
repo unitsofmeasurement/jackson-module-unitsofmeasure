@@ -32,9 +32,7 @@ public class TestUnitJacksonModule {
 	@Before
 	public void setUp() throws Exception {
 		final ObjectMapper mapper = new ObjectMapper();
-
 		mapper.registerModule(new UnitJacksonModule());
-
 		this.jsonFactory = new JsonFactory(mapper);
 	}
 
