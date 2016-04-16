@@ -11,6 +11,7 @@ import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import tec.uom.se.unit.Units;
@@ -96,17 +97,21 @@ public class TestUnitJacksonModule {
 		Unit<?> parsedUnit = parse("\"m\"", Unit.class);
 		assertEquals("The Unit<Length> in the parsed JSON doesn't match",
 				Units.METRE, parsedUnit);
-		
-//		parsedUnit = parse("\"km\"", Unit.class); TODO solve km formatting
-//		assertEquals("The Unit<Length> in the parsed JSON doesn't match",
-//				KILO(Units.METRE), parsedUnit);
 	}
 
 	@Test(expected = JsonParseException.class)
 	public void testParseWithUnrecognizedField() throws Exception {
 		parse("foobar", Unit.class);
 	}
-
+	
+	@Test
+	@Ignore
+	public void testParseLengthKm() throws Exception {
+		Unit<?> parsedUnit = parse("\"km\"", Unit.class); //TODO solve km formatting
+		assertEquals("The Unit<Length> in the parsed JSON doesn't match",
+				KILO(Units.METRE), parsedUnit);
+	}
+	
 	protected String serialize(Object objectToSerialize) throws IOException {
 		final Writer writer = new StringWriter();
 		final JsonGenerator generator = this.jsonFactory.createJsonGenerator(writer);
