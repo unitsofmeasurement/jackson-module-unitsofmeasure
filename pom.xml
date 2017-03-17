@@ -5,14 +5,14 @@
 
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <version>1.0</version>
+        <version>1.0.3</version>
         <artifactId>uom-parent</artifactId>
         <groupId>tec.uom</groupId>
     </parent>
     <groupId>com.opower.unitsofmeasure</groupId>
     <artifactId>jackson-module-unitsofmeasure</artifactId>
     <packaging>jar</packaging>
-    <version>1.3.4</version>
+    <version>1.3.5-SNAPSHOT</version>
 
     <name>Jackson Units of Measurement Module</name>
     <description>Contains custom serializers and deserializers for JSR 363.</description>
@@ -25,9 +25,9 @@
         <jdkVersion>1.8</jdkVersion>
         <maven.compile.targetLevel>1.6</maven.compile.targetLevel>
         <maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
-        <impl.version>1.0</impl.version>
+        <impl.version>1.0.4</impl.version>
         <lib.version>1.0</lib.version> <!-- currently unused -->
-        <ucum.version>0.4</ucum.version>
+        <ucum.version>0.7-SNAPSHOT</ucum.version>
         <jackson.version>2.2.2</jackson.version>
     </properties>
 

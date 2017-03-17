@@ -20,6 +20,7 @@ import systems.uom.ucum.UCUM;
 import javax.measure.Unit;
 
 import static tec.uom.se.unit.MetricPrefix.KILO;
+import static tec.uom.se.unit.MetricPrefix.MILLI;
 import static org.junit.Assert.*;
 
 /**
@@ -65,14 +66,18 @@ public class TestUnitJacksonModule {
 		
 //		assertEquals(
 //				"Expected JSON with a UCUM representation of the length unit",
-//				"\"km\"", serialize(KILO(Units.METRE)));  //TODO solve km formatting
+//				"\"km\"", serialize(KILO(Units.METRE)));  //TODO solve prefix formatting
+//		
+//		assertEquals(
+//			"Expected JSON with a UCUM representation of the length unit",
+//			"\"mm\"", serialize(MILLI(Units.METRE)));
 	}
 	
 	@Test
 	public void testSerializeSpeed() throws Exception {
 		assertEquals(
 				"Expected JSON with a UCUM representation of the speed unit",
-				"\"[kph]\"", serialize(Units.KILOMETRES_PER_HOUR));
+				"\"[kph]\"", serialize(Units.KILOMETRE_PER_HOUR));
 	}
 
 	@Test
@@ -103,9 +108,9 @@ public class TestUnitJacksonModule {
 	}
 	
 	@Test
-	@Ignore
+	@Ignore("solve km formatting") // TODO solve km formatting
 	public void testParseLengthKm() throws Exception {
-		Unit<?> parsedUnit = parse("\"km\"", Unit.class); //TODO solve km formatting
+		Unit<?> parsedUnit = parse("\"km\"", Unit.class);
 		assertEquals("The Unit<Length> in the parsed JSON doesn't match",
 				KILO(Units.METRE), parsedUnit);
 	}
