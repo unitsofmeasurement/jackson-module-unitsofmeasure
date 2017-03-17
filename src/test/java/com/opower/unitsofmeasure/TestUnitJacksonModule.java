@@ -108,7 +108,7 @@ public class TestUnitJacksonModule {
 	}
 	
 	@Test
-	@Ignore("solve km formatting") // TODO solve km formatting
+	@Ignore("solve km formatting") // TODO solve km parsing
 	public void testParseLengthKm() throws Exception {
 		Unit<?> parsedUnit = parse("\"km\"", Unit.class);
 		assertEquals("The Unit<Length> in the parsed JSON doesn't match",
