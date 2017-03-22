@@ -53,7 +53,6 @@ public class TestUnitJacksonModule {
     }
 
     @Test
-    @Ignore("address https://github.com/unitsofmeasurement/uom-systems/issues/74")
     public void testSerializeLength() throws Exception {
 	assertEquals("Expected JSON with a UCUM representation of the length unit", "\"[mi_i]\"",
 		serialize(UCUM.MILE_INTERNATIONAL));
@@ -61,10 +60,10 @@ public class TestUnitJacksonModule {
 	assertEquals("Expected JSON with a UCUM representation of the length unit", "\"m\"", serialize(Units.METRE));
 
 	assertEquals("Expected JSON with a UCUM representation of the length unit", "\"km\"",
-		serialize(KILO(Units.METRE))); // TODO solve prefix formatting
+		serialize(KILO(UCUM.METER)));
 
 	assertEquals("Expected JSON with a UCUM representation of the length unit", "\"mm\"",
-		serialize(MILLI(Units.METRE)));
+		serialize(MILLI(UCUM.METER)));
     }
 
     @Test
