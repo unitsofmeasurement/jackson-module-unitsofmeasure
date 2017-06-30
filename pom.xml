@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
@@ -26,9 +25,9 @@
 		<maven.compile.targetLevel>1.6</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
 		<api.version>1.0</api.version>
-		<impl.version>1.0.5</impl.version>
-		<lib.version>1.0</lib.version> <!-- currently unused -->
-		<ucum.version>0.7</ucum.version>
+		<impl.version>1.0.7</impl.version>
+		<lib.version>1.0.2</lib.version> <!-- currently unused -->
+		<ucum.version>0.7.1</ucum.version>
 		<jackson.version>2.2.2</jackson.version>
 		<junit.version>4.12</junit.version>
 	</properties>
@@ -127,133 +126,3 @@
 		</pluginManagement>
 	</build>
 </project>
-=======
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<version>4.0.1</version>
-		<artifactId>opower-parent</artifactId>
-		<groupId>com.opower</groupId>
-	</parent>
-	<groupId>com.opower.unitsofmeasure</groupId>
-	<artifactId>jackson-module-unitsofmeasure</artifactId>
-	<packaging>jar</packaging>
-	<version>1.3.5-SNAPSHOT</version>
-
-	<name>Jackson Units of Measurement Module</name>
-	<description>Contains custom serializers and deserializers for JSR 363.</description>
-
-	<!-- ======================================================= -->
-	<!-- Build Settings -->
-	<!-- ======================================================= -->
-	<properties>
-		<project.build.javaVersion>1.8</project.build.javaVersion>
-		<jdkVersion>1.8</jdkVersion>
-		<maven.compile.targetLevel>1.6</maven.compile.targetLevel>
-		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
-		<api.version>1.0</api.version>
-		<impl.version>1.0.5</impl.version>
-		<lib.version>1.0</lib.version> <!-- currently unused -->
-		<ucum.version>0.7</ucum.version>
-		<jackson.version>2.2.2</jackson.version>
-		<junit.version>4.12</junit.version>
-	</properties>
-
-	<dependencies>
-		<!-- =========================================================================================================== -->
-		<!-- The units of measurement interface is in the javax.measure package. -->
-		<!-- The implementation is provided by JSR 363 -->
-		<!-- =========================================================================================================== -->
-		<dependency>
-			<groupId>javax.measure</groupId>
-			<artifactId>unit-api</artifactId>
-			<version>${api.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>tec.uom</groupId>
-			<artifactId>uom-se</artifactId>
-			<version>${impl.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>systems.uom</groupId>
-			<artifactId>systems-quantity</artifactId>
-			<version>${ucum.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>systems.uom</groupId>
-			<artifactId>systems-ucum-java8</artifactId>
-			<version>${ucum.version}</version>
-		</dependency>
-
-		<!-- =========================================================================================================== -->
-		<!-- Jackson library for JSON-parsing -->
-		<!-- =========================================================================================================== -->
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-core</artifactId>
-			<version>${jackson.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-databind</artifactId>
-			<version>${jackson.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>${junit.version}</version>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>${jdkVersion}</source>
-					<target>${jdkVersion}</target>
-				</configuration>
-			</plugin>
-		</plugins>
-		<pluginManagement>
-			<plugins>
-				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
-				<plugin>
-					<groupId>org.eclipse.m2e</groupId>
-					<artifactId>lifecycle-mapping</artifactId>
-					<version>1.0.0</version>
-					<configuration>
-						<lifecycleMappingMetadata>
-							<pluginExecutions>
-								<pluginExecution>
-									<pluginExecutionFilter>
-										<groupId>org.jacoco</groupId>
-										<artifactId>
-											jacoco-maven-plugin
-										</artifactId>
-										<versionRange>
-											[0.7.0.201403182114,)
-										</versionRange>
-										<goals>
-											<goal>prepare-agent</goal>
-										</goals>
-									</pluginExecutionFilter>
-									<action>
-										<ignore></ignore>
-									</action>
-								</pluginExecution>
-							</pluginExecutions>
-						</lifecycleMappingMetadata>
-					</configuration>
-				</plugin>
-			</plugins>
-		</pluginManagement>
-	</build>
-</project>
->>>>>>> branch 'master' of https://github.com/unitsofmeasurement/jackson-module-unitsofmeasure.git
