@@ -19,6 +19,7 @@ import systems.uom.ucum.UCUM;
 
 import javax.measure.Unit;
 
+import static tec.uom.se.AbstractUnit.ONE;
 import static tec.uom.se.unit.MetricPrefix.KILO;
 import static tec.uom.se.unit.MetricPrefix.MILLI;
 import static org.junit.Assert.*;
@@ -83,6 +84,12 @@ public class TestUnitJacksonModule {
     public void testParseTemperature() throws Exception {
 	Unit<?> parsedUnit = parse("\"Cel\"", Unit.class);
 	assertEquals("The Unit<Temperature> in the parsed JSON doesn't match", Units.CELSIUS, parsedUnit);
+    }
+    
+    @Test
+    public void testParseTemperatureInverse() throws Exception {
+	Unit<?> parsedUnit = parse("\"1/K\"", Unit.class);
+	assertEquals("The Unit<Temperature> in the parsed JSON doesn't match", ONE.divide(Units.KELVIN), parsedUnit);
     }
 
     @Test
