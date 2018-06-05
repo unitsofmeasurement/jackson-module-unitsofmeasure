@@ -1,8 +1,5 @@
 package com.opower.unitsofmeasure;
 
-import java.io.IOException;
-import java.text.ParsePosition;
-
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonToken;
@@ -12,25 +9,22 @@ import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.deser.std.StdScalarDeserializer;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.databind.ser.std.StdScalarSerializer;
-
+import java.io.IOException;
+import java.text.ParsePosition;
+import javax.measure.Unit;
 import systems.uom.ucum.format.UCUMFormat;
 import systems.uom.ucum.format.UCUMFormat.Variant;
-
-import javax.measure.Unit;
 
 /**
  * Configures Jackson to (de)serialize JSR 363 Unit objects using their UCUM representation, since the actual objects don't
  * translate well into JSON.
  */
 public class UnitJacksonModule extends SimpleModule {
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 7601584599518016604L;
+    private static final long serialVersionUID = 7601584599518016604L;
 
-	public UnitJacksonModule() {
-        super("UnitJsonSerializationModule", new Version(1, 3, 3, null, 
-        		UnitJacksonModule.class.getPackage().getName(), "jackson-module-unitsofmeasure"));
+    public UnitJacksonModule() {
+        super("UnitJsonSerializationModule", new Version(1, 3, 3, null,
+                UnitJacksonModule.class.getPackage().getName(), "jackson-module-unitsofmeasure"));
 
         addSerializer(Unit.class, new UnitJsonSerializer());
         addDeserializer(Unit.class, new UnitJsonDeserializer());
@@ -45,8 +39,7 @@ public class UnitJacksonModule extends SimpleModule {
         public void serialize(Unit unit, JsonGenerator jgen, SerializerProvider provider) throws IOException {
             if (unit == null) {
                 jgen.writeNull();
-            }
-            else {
+            } else {
                 // Format the unit using the UCUM representation.
                 // The string produced for a given unit is always the same; it is not affected by the locale.
                 // It can be used as a canonical string representation for exchanging units.
@@ -58,12 +51,9 @@ public class UnitJacksonModule extends SimpleModule {
     }
 
     private class UnitJsonDeserializer extends StdScalarDeserializer<Unit> {
-        /**
-		 * 
-		 */
-		private static final long serialVersionUID = -6327531740958676293L;
+        private static final long serialVersionUID = -6327531740958676293L;
 
-		protected UnitJsonDeserializer() {
+        protected UnitJsonDeserializer() {
             super(Unit.class);
         }
 
