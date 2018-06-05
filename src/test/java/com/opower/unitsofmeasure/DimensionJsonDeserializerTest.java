@@ -18,21 +18,21 @@ import tec.uom.se.quantity.QuantityDimension;
  */
 public class DimensionJsonDeserializerTest {
 
-	/**
-	 * Test of deserialize method, of class DimensionJsonDeserializer.Inspired by
-	 * https://stackoverflow.com/questions/21787128/how-to-unit-test-jackson-jsonserializer-and-jsondeserializer
-	 * 
-	 * @throws IOException if an I/O error occurs
-	 */
-	@Test
-	public void testDeserialize() throws IOException {
-		ObjectMapper objectMapper = new ObjectMapper();
-		InputStream stream = new ByteArrayInputStream("{\"[L]\":2,\"[T]\":1}".getBytes(StandardCharsets.UTF_8));
-		JsonParser parser = objectMapper.getFactory().createParser(stream);
-		DeserializationContext ctxt = objectMapper.getDeserializationContext();
-		DimensionJsonDeserializer instance = new DimensionJsonDeserializer();
-		Dimension expResult = QuantityDimension.LENGTH.pow(2).multiply(QuantityDimension.TIME);
-		Dimension result = instance.deserialize(parser, ctxt);
-		assertEquals(expResult, result);
-	}
+    /**
+     * Test of deserialize method, of class DimensionJsonDeserializer.Inspired by
+     * https://stackoverflow.com/questions/21787128/how-to-unit-test-jackson-jsonserializer-and-jsondeserializer
+     *
+     * @throws IOException if an I/O error occurs
+     */
+    @Test
+    public void testDeserialize() throws IOException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        InputStream stream = new ByteArrayInputStream("{\"[L]\":2,\"[T]\":1}".getBytes(StandardCharsets.UTF_8));
+        JsonParser parser = objectMapper.getFactory().createParser(stream);
+        DeserializationContext ctxt = objectMapper.getDeserializationContext();
+        DimensionJsonDeserializer instance = new DimensionJsonDeserializer();
+        Dimension expResult = QuantityDimension.LENGTH.pow(2).multiply(QuantityDimension.TIME);
+        Dimension result = instance.deserialize(parser, ctxt);
+        assertEquals(expResult, result);
+    }
 }

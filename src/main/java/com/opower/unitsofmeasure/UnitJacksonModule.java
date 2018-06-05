@@ -11,18 +11,18 @@ import javax.measure.Unit;
  * representation, since the actual objects don't translate well into JSON.
  */
 public class UnitJacksonModule extends SimpleModule {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 7601584599518016604L;
+    /**
+     *
+     */
+    private static final long serialVersionUID = 7601584599518016604L;
 
-	public UnitJacksonModule() {
-		super("UnitJsonSerializationModule", new Version(1, 3, 5, null, UnitJacksonModule.class.getPackage().getName(),
-				"jackson-module-unitsofmeasure"));
+    public UnitJacksonModule() {
+        super("UnitJsonSerializationModule", new Version(1, 3, 5, null, UnitJacksonModule.class.getPackage().getName(),
+                "jackson-module-unitsofmeasure"));
 
-		addSerializer(Unit.class, new UnitJsonSerializer());
-		addSerializer(Dimension.class, new DimensionJsonSerializer());
-		addDeserializer(Unit.class, new UnitJsonDeserializer());
-		addDeserializer(Dimension.class, new DimensionJsonDeserializer());
-	}
+        addSerializer(Unit.class, new UnitJsonSerializer());
+        addSerializer(Dimension.class, new DimensionJsonSerializer());
+        addDeserializer(Unit.class, new UnitJsonDeserializer());
+        addDeserializer(Dimension.class, new DimensionJsonDeserializer());
+    }
 }
