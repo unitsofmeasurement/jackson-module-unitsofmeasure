@@ -3,6 +3,8 @@ jackson-module-unitsofmeasure
 
 Contains custom serializers and deserializers for JSR 363.
 
+The next generation (based on JSR 385, currently it is very similar but based on Indriya 1.0 instead of uom-se) is developed in the [uom-lib Jackson module](https://github.com/unitsofmeasurement/uom-lib/tree/master/jackson).
+
 Dependencies
 ------------
 
