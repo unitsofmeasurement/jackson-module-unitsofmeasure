@@ -12,6 +12,7 @@ import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.deser.std.StdScalarDeserializer;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.databind.ser.std.StdScalarSerializer;
+import javax.measure.Dimension;
 
 import systems.uom.ucum.format.UCUMFormat;
 import systems.uom.ucum.format.UCUMFormat.Variant;
@@ -33,7 +34,9 @@ public class UnitJacksonModule extends SimpleModule {
         		UnitJacksonModule.class.getPackage().getName(), "jackson-module-unitsofmeasure"));
 
         addSerializer(Unit.class, new UnitJsonSerializer());
+        addSerializer(Dimension.class, new DimensionJsonSerializer());
         addDeserializer(Unit.class, new UnitJsonDeserializer());
+        addDeserializer(Dimension.class, new DimensionJsonDeserializer());
     }
 
     private class UnitJsonSerializer extends StdScalarSerializer<Unit> {
