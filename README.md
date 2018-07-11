@@ -1,9 +1,9 @@
 jackson-module-unitsofmeasure
 =============================
 
-[![Stability: Unsupported](https://masterminds.github.io/stability/unsupported.svg)](https://masterminds.github.io/stability/unsupported.html)
-
 Contains custom serializers and deserializers for JSR 363.
+
+[![Stability: Unsupported](https://masterminds.github.io/stability/unsupported.svg)](https://masterminds.github.io/stability/unsupported.html)
 
 The next generation (based on JSR 385, currently it is very similar but based on Indriya 1.0 instead of uom-se) is developed in the [uom-lib Jackson module](https://github.com/unitsofmeasurement/uom-lib/tree/master/jackson).
 
