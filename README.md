@@ -12,7 +12,7 @@ Dependencies
 ------------
 
  * The final version version (`1.0`) of the [JSR 363 API](../../../unit-api) 
- * Latest version (`1.0.9`) of the [SE Port](../../../uom-se)
+ * Version `1.0.9` of the [SE Port](../../../uom-se)
  * **UCUM** [System](../../../uom-systems) (`0.9`)
 
 Provided in JFrog OSS Snapshot repo, JCenter or MavenCentral (Sonatype).
