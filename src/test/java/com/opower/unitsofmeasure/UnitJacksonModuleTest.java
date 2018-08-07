@@ -27,7 +27,7 @@ import static org.junit.Assert.*;
 /**
  * Unit tests for UnitJacksonModule
  */
-public class TestUnitJacksonModule {
+public class UnitJacksonModuleTest {
     // can't directly unit test the Jackson Module classes; need to go through
     // JsonFactory
     private JsonFactory jsonFactory;
