@@ -25,7 +25,7 @@ public class UnitJsonDeserializer extends StdScalarDeserializer<Unit> {
     public Unit deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException {
         JsonToken currentToken = jsonParser.getCurrentToken();
         if (currentToken == JsonToken.VALUE_STRING) {
-            return UCUMFormat.getInstance(UCUMFormat.Variant.CASE_INSENSITIVE).parse(jsonParser.getText(), new ParsePosition(0));
+            return UCUMFormat.getInstance(UCUMFormat.Variant.CASE_SENSITIVE).parse(jsonParser.getText(), new ParsePosition(0));
         }
         throw deserializationContext.wrongTokenException(jsonParser, JsonToken.VALUE_STRING, "Expected unit value in String format");
     }

@@ -14,12 +14,12 @@ import javax.measure.Unit;
 
 import static org.junit.Assert.*;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import systems.uom.ucum.UCUM;
 import static tec.uom.se.AbstractUnit.ONE;
 import static tec.uom.se.unit.MetricPrefix.KILO;
+import static tec.uom.se.unit.MetricPrefix.MEGA;
 import static tec.uom.se.unit.MetricPrefix.MILLI;
 import tec.uom.se.unit.Units;
 
@@ -104,10 +104,16 @@ public class UnitJacksonModuleTest {
     }
 
     @Test
-    @Ignore("solve km formatting") // TODO solve km parsing
     public void testParseLengthKm() throws Exception {
         Unit<?> parsedUnit = parse("\"km\"", Unit.class);
         assertEquals("The Unit<Length> in the parsed JSON doesn't match", KILO(Units.METRE), parsedUnit);
+    }
+
+    @Test
+    public void testRoundTripSerialization() throws Exception {
+        String serialized = serialize(MEGA(UCUM.METER));
+        Unit<?> parsedUnit = parse(serialized, Unit.class);
+        assertEquals("The Unit<Length> in the parsed JSON doesn't match", MEGA(UCUM.METER), parsedUnit);
     }
 
     protected String serialize(Object objectToSerialize) throws IOException {
