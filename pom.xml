@@ -26,10 +26,10 @@
         <maven.compile.targetLevel>1.6</maven.compile.targetLevel>
         <maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
         <api.version>1.0</api.version>
-        <impl.version>1.0.9</impl.version>
+        <impl.version>1.0.10-SNAPSHOT</impl.version>
         <lib.version>1.0.2</lib.version> <!-- currently unused -->
         <ucum.version>0.9</ucum.version>
-        <jackson.version>2.9.6</jackson.version>
+        <jackson.version>2.9.8</jackson.version>
         <junit.version>4.12</junit.version>
     </properties>
 
